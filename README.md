@@ -3,13 +3,17 @@ This is a template for creating the linux service.
 ## Steps
 1. Fetch the repo
 ```shell
-git clone https://github.com/xh-dev/linux-service
+service={service-name}
+git clone https://github.com/xh-dev/linux-service $service
+cd $service
 ```
-1. update variables
+2. Modify the run.sh to execution script
+3. update variables
 ```shell
-cd linux-service
-sed -i s/{working-dir}/dir-to-replace/g' service
-sed -i s/{exec}/path-to-exec/g' service
+# pass service name with pipeline
+echo "service-name" | ./init
 ```
-1. create link
-1. reload service
+4. start service
+```shell
+./startService
+```
