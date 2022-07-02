@@ -1,0 +1,11 @@
+[Unit]
+Description=provide port forwarding service
+
+[Service]
+User=root
+WorkingDirectory={working-dir}
+ExecStart={exec}
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
