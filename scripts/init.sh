@@ -4,7 +4,7 @@ cd $SOURCE
 echo "Current in: $(pwd)"
 echo "======================"
 
-[[ -f ".cfg" ]] && echo "config exists!" || (source ./input-service-name.sh && echo "service name set!")
+[[ -f ".cfg" ]] && echo "config exists!" || (source ./updateServiceName && echo "service name set!")
 echo "======================"
 
 serviceName="$(cat .cfg)"
