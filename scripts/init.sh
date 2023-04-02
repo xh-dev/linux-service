@@ -16,7 +16,9 @@ cp service.tmpl service
 sed -i "s|{working-dir}|$(pwd)|g" service
 sed -i "s|{exec}|$(pwd)/run.sh|g" service
 
-ln -f -s "$(pwd)/service" $servicePath
+# Fix bug in enabling service
+# https://unix.stackexchange.com/questions/700687/sytemctl-failed-to-look-up-unit-file-state-invalid-argument
+ln -f "$(pwd)/service" $servicePath
 
 systemctl daemon-reload
 systemctl enable $serviceName
