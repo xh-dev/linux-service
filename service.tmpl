@@ -1,13 +1,14 @@
 [Unit]
-StartLimitIntervalSec=400
-StartLimitBurst=3
+StartLimitIntervalSec=180
+StartLimitBurst=5
 Description=A custom service
 
 [Service]
 User=root
 WorkingDirectory={working-dir}
 ExecStart={exec}
-Restart=always
+Restart=on-failure
+RestartSec=30
 
 [Install]
 WantedBy=multi-user.target
